@@ -415,3 +415,40 @@ code{
   }
 }
 
+/* --- Multi-Image Gallery Row --- */
+.card-media-gallery {
+  justify-content: flex-start;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  gap: 16px;
+  /* Adds a bit of padding at the bottom so the scrollbar doesn't overlap images */
+  padding-bottom: 20px; 
+}
+
+.card-media-gallery img {
+  /* 85% width allows a "peek" at the next image to intuitively show it's scrollable */
+  width: 85%; 
+  max-width: 600px;
+  flex-shrink: 0;
+  scroll-snap-align: center;
+}
+
+/* Custom Scrollbar for the gallery */
+.card-media-gallery::-webkit-scrollbar {
+  height: 8px;
+}
+
+.card-media-gallery::-webkit-scrollbar-track {
+  background: rgba(0,0,0,0.18);
+  border-radius: 4px;
+  margin: 0 14px; /* Keeps the scrollbar track from touching the absolute edges */
+}
+
+.card-media-gallery::-webkit-scrollbar-thumb {
+  background: var(--border);
+  border-radius: 4px;
+}
+
+.card-media-gallery::-webkit-scrollbar-thumb:hover {
+  background: var(--muted);
+}
